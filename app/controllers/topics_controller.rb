@@ -41,15 +41,16 @@ class TopicsController < ApplicationController
     redirect_to topics_path, notice: "トピックを削除しました！"
   end
 
-  def confirm
-    @topic = Topic.new(topic_params)
-    render :new if @topic.invalid?
-  end
+# TBD confirmation routing.
+  # def confirm
+  #   @topic = Topic.new(topic_params)
+  #   render :new if @topic.invalid?
+  # end
 
   private
 
     def topic_params
-      params.require(:topic).permit(:title, :content)
+      params.require(:topic).permit(:content, :picture)
     end
 
     def set_topic

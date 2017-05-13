@@ -1,6 +1,10 @@
 module ApplicationHelper
 end
 
+def picture_img(topic)
+  return image_tag(topic.picture) if topic.picture?
+end
+
 module ActionView
   module Helpers
     module FormHelper

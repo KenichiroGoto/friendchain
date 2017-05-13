@@ -5,6 +5,7 @@
 
 <% @topics.each do |topic| %>
   <p><%= topic.content %></p>
+  <%= picture_img(topic) if topic.picture?%>
   <%= link_to "編集", edit_topic_path(topic.id) %>
   <%= link_to "削除", topic_path(topic.id), data: { confirm: "本当に削除して良いですか？" }, method: :delete %>
 <% end %>

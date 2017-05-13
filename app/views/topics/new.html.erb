@@ -1,10 +1,18 @@
 <h4>新規トピック作成</h4>
 
-<%= form_for(@topic, url: confirm_topics_path) do |f| %>
-<%= f.error_messages! %>
-<%= f.label :content %>
-<%= f.text_area :content, :size => "20x8", class: 'form-control' %>
-<%= f.submit "投稿" %>
+<%= form_for(@topic) do |f| %>
+
+  <%= f.error_messages! %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, :size => "20x8", class: 'form-control' %>
+
+  <%= picture_img(@topic) if @topic.picture?%>
+  <%= f.label :picture %>
+  <%= f.file_field :picture %>
+  <%= f.hidden_field :picture_cache %>
+
+  <%= f.submit "投稿" %>
 <% end %>
 
 <%= link_to "トピック一覧へ戻る", topics_path %>
