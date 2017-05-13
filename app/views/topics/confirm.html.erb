@@ -1,0 +1,12 @@
+<h4>以下の内容で投稿して良いですか？</h4>
+
+<%= form_for(@topic) do |f| %>
+  <%= f.hidden_field :content %>
+  <%= @topic.content %>
+  <%= f.submit "投稿", class: 'btn btn-primary btn-block' %>
+<% end %>
+
+<%= form_for(@topic, url: new_topic_path, method: 'get') do |f| %>
+  <%= f.hidden_field :content %>
+  <%= f.submit "戻る", name: 'back', class: 'btn btn-primary btn-block' %>
+<% end %>

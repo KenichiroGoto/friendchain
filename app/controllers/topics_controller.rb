@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:edit, :update, :show, :destroy]
 
   def index
-    @toipcs = Topic.all
+    @topics = Topic.all
   end
 
   def new
@@ -49,7 +49,7 @@ class TopicsController < ApplicationController
   private
 
     def topic_params
-      params.requre(:topic)permit(:title, :content)
+      params.require(:topic).permit(:title, :content)
     end
 
     def set_topic
