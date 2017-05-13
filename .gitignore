@@ -14,3 +14,6 @@
 
 # dotenv-rails
 .env
+
+# Ignore uploaded tmpfiles
+/public/uploads/tmp/*
