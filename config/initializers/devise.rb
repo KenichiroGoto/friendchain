@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '72c6c864ee2f5a592ae15ae3214644f629c6dea4d0b8b44d6148586e198b1f2aae46e5c489e776cbfacb5cec0360b9681a5ef8d3ba28657134da1ecd72482349'
+  config.secret_key = '72c6c864ee2f5a592ae15ae3214644f629c6dea4d0b8b44d6148586e198b1f2aae46e5c489e776cbfacb5cec0360b9681a5ef8d3ba28657134da1ecd72482349'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -256,7 +256,9 @@ Devise.setup do |config|
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
-  # config.warden do |manager|
+  config.warden do |manager|
+    manager.failure_app = CustomAuthenticationFailure
+  end
   #   manager.intercept_401 = false
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
