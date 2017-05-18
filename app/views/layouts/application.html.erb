@@ -29,7 +29,7 @@
 
           <!-- change logo belongs to login/logoff -->
           <% if user_signed_in? %>
-            "<div class="logo_container_login" >"
+            <div class="logo_container_login" >
             <%= link_to image_tag('logo_login.png'), topics_path %>
             </div>
           <% else %>
@@ -48,6 +48,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'トピック一覧', topics_path %></li>
+                  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
             </ul>

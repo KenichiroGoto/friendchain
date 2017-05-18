@@ -18,6 +18,17 @@ def picture_img(topic)
   return image_tag(topic.picture) if topic.picture?
 end
 
+def profile_img(user)
+  return image_tag(user.avatar, alt: user.name)if user.avatar?
+
+  unless user.provider.blank?
+    img_url = user.image_url
+  else
+    img_url = 'no_avatar.png'
+  end
+  image_tag(img_url, alt: user.name)
+end
+
 module ActionView
   module Helpers
     module FormHelper
