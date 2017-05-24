@@ -13,11 +13,11 @@
           <div class="topic_user_area">
 
             <div class="topic_profile_image" >
-              <p>プロファイル画像</p>
+              <%= profile_img(topic.user) %>
             </div>
 
             <div class="topic_action_area">
-              <p>ユーザーが投稿しました。</p>
+              <p><%= topic.user.name %>が投稿しました。</p>
               <p><%= topic.updated_at %></p>
             </div>
 

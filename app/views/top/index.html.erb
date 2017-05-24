@@ -1,3 +1,54 @@
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
-<%= notice %>
+
+<div class="container">
+  <div class="row" id="top_main">
+          <%= notice %>
+    <div class="wrapper col-lg-5 col-lg-offset-1 col-md-6  col-sm-6">
+      <div class="top_left_area">
+        <div class="top_left_area_message">
+          <p>Friendchainを使うと、友達や同僚、同級生、仲間たちとつながりを深められます。ケータイ、スマートフォンからもアクセスできます。</p>
+        </div>
+        <div class="top_left_area_image">
+          <img src="<%= asset_path "top_network.png" %>">
+        </div>
+      </div>
+    </div>
+    <div class="wrapper col-lg-4 col-lg-offset-1 col-md-6 col-sm-6">
+      <div class="top_right_area">
+        <div class="top_right_area_title">
+          <p>アカウント登録</p>
+        </div>
+        <div class="top_right_area_message">
+          <p>情報の共有範囲は設定で管理できて安心です。</p>
+        </div>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="top_reg_field">
+            <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "名前" %>
+          </div>
+
+          <div class="top_reg_field">
+            <%= f.email_field :email, autofocus: false, class: "form-control", placeholder: "メールアドレス" %>
+          </div>
+
+          <div class="top_reg_field">
+            <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード(6文字以上)" %>
+          </div>
+
+          <div class="top_reg_field">
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード再入力" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "アカウント登録",  id: "account_reg_button"%>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+
+      </div>
+    </div>
+  </div>
+
+</div>

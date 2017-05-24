@@ -18,19 +18,22 @@ body.body_login {
   background-color:#e9ebee;
 }
 
+body.body_logoff {
+  background: linear-gradient(white, #D3D8E8);
+}
+
 footer {
     width: 100%;
-    height: 50px;
-    background-color: #3b5998;
-    color: white;
-    padding-top: 15px;
+    height: 100px;
+    padding-top: 40px;
     font-size: 12px;
     display: block;
     position: absolute;
     bottom: 0;
-    margin: auto;
-    margin-top: 50px;
     text-align: center;
+    color: #737373;
+    margin: 0 auto;
+    background-color: #fff;
 }
 
 input, select, textarea {
@@ -49,6 +52,10 @@ input, select, textarea {
 
 .container-fluid {
   max-width: 980px;
+}
+
+#top_main {
+  margin-bottom: 80px;
 }
 
 .logo_container_logoff img{
@@ -70,24 +77,219 @@ input, select, textarea {
 
 .login_form_box {
   display: flex;
+  width: 450px;
   margin-left: auto;
 }
 
-#new_user {
+#login_form_email_box {
+  padding: 0px 0px 0px 5px;
+  font-weight: normal;
+}
+
+#login_form_email {
+  width: 150px;
+  height: 25px;
+  border-radius: 0px;
+}
+
+#login_form_pwd_box {
+  padding: 20px 5px 0px 5px;
+  font-weight: normal;
+}
+
+#login_form_pwd {
+  width: 150px;
+  height: 25px;
+  border-radius: 0px;
+}
+
+#login_form_btn_box {
+  padding-top: 42px;
+}
+
+#login_btn {
+  width: 70px;
+  height: 28px;
+  border-radius: 2px;
+  border: solid 1px #003366;
+  background-color: #3b5998;
+  font-size: 11px;
+  margin: 0px 0px 0px 0px;
+}
+
+#login_btn:hover {
+  filter:alpha(opacity=80);
+  opacity:0.6;
+}
+
+.form-group a{
+  text-decoration: none;
+  color: gray;
+}
+
+.header_signed_in {
+  width: 330px;
   display: flex;
   margin-left: auto;
 }
 
-#login_form_email {
-  width: 200px;
+#bs-example-navbar-collapse-1 {
+  // margin-left: auto;
 }
 
-#login_form_pwd {
-  width: 200px;
+.header_user_edit {
+  padding-right: 5px;
+}
+
+.header_user_edit a{
+  display: block;
+  padding: 4px 3px 0px 3px;
+  min-width: 60px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+#user_edit_btn {
+  height: 25px;
+  border-radius: 3px;
+  border: solid 1px #3b5998;
+  background-color: #4e69a2;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+#user_edit_btn:hover {
+  filter:alpha(opacity=80);
+  opacity:0.6;
+}
+
+.header_topic_index {
+  padding-right: 5px;
+}
+
+.header_topic_index a{
+  display: block;
+  padding: 5px 3px 0px 3px;
+  min-width: 60px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+#topic_index_btn {
+  height: 25px;
+  border-radius: 3px;
+  border: solid 1px #3b5998;
+  background-color: #4e69a2;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+#topic_index_btn:hover {
+  filter:alpha(opacity=80);
+  opacity:0.6;
+}
+
+.header_all_user {
+  padding-right: 5px;
+}
+
+.header_all_user a{
+  display: block;
+  padding: 5px 3px 0px 3px;
+  min-width: 60px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.header_logoff {
+}
+
+.header_logoff a{
+  display: block;
+  padding: 17px 3px 0px 3px;
+  min-width: 60px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+#all_user_btn {
+  height: 25px;
+  border-radius: 3px;
+  border: solid 1px #3b5998;
+  background-color: #4e69a2;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+#all_user_btn:hover {
+  filter:alpha(opacity=80);
+  opacity:0.6;
 }
 
 .container {
-  padding-bottom: 60px;
+  padding-bottom: 150px;
+}
+
+.top_left_area {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.top_left_area_message {
+  display: block;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.top_left_area_image {
+}
+
+.top_left_area_image img{
+  width: 100%;
+}
+
+.top_right_area {
+
+}
+
+.top_right_area_title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.top_right_area_message {
+  font-size: 17px;
+  padding-bottom: 5px;
+}
+.top_reg_field {
+  margin: 10px 0px 10px 0px;
+}
+
+#account_reg_button {
+  padding: 7px 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  display: inline-block;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+
+  border: 1px solid ;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  margin-top: 20px;
+
+  background: linear-gradient(#67ae55, #578843);
+  background-color: #69a74e;
+  box-shadow: inset 0 1px 1px #a4e388;
+  border-color: #3b6e22 #3b6e22 #2c5115;
+  min-width: 194px;
 }
 
 .topic_box {
@@ -107,11 +309,13 @@ input, select, textarea {
 }
 
 .topic_profile_image img{
-
+  width: 45px;
+  display: block;
+  padding: 10px 0px 0px 0px;
 }
 
 .topic_action_area {
-
+  margin: 0px;
 }
 
 .topic_content_area {
@@ -135,21 +339,6 @@ input, select, textarea {
   display: flex;
   width: 104px;
   margin-left: auto;
-}
-
-#login_btn {
-  width: 50px;
-  height: 25px;
-  border-radius: 0px;
-  border: #3b5998;
-  background-color: #3b5998;
-  font-size: 10px;
-  margin: 0px 0px 0px 2px;
-}
-
-#login_btn:hover {
-  filter:alpha(opacity=80);
-  opacity:0.6;
 }
 
 #topic_btn {
