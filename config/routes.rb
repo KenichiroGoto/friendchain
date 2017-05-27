@@ -1,19 +1,25 @@
 Rails.application.routes.draw do
 
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   resources :topics do
     post :confirm, on: :collection
     resources :comments
   end
 
-  root 'top#index'
+  resources :users, only: [:index]
 
+  resources :relationships, only: [:create, :destroy]
+
+  root 'top#index'
 
   # devise
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-
 
   # rails_admin
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html {redirect_to topics_path, notice: 'コメントを投稿しました。'}
+        format.js {render :index}
       else
         format.html {render :new}
       end
@@ -14,10 +15,9 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    binding.pry
     respond_to do |format|
       @comment.destroy
-      format.html {redirect_to topics_path notice: 'コメントを削除しました。'}
+      format.html {redirect_to topics_path, notice: 'コメントを削除しました。'}
     end
   end
 

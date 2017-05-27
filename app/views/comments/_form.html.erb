@@ -1,4 +1,4 @@
-<% form_for(comment, url: topic_comments_path(topic) ) do |f| %>
+<%= form_for(comment, url: topic_comments_path(topic), remote: true ) do |f| %>
   <% if comment.errors.any? %>
     <div id="error_explanation" >
       <h4><%= comment.errors.count %>件のエラーがあります。</h4>
@@ -9,10 +9,13 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.text_field :content, placeholder: "コメントを入力", class: "form-control" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "投稿" %>
+  <div class="comment_form_box">
+    <div class="field" id="comment_form_area">
+      <%= f.hidden_field :topic_id %>
+      <%= f.text_field :content, placeholder: "コメントを入力", class: "form-control", id: "comment_form" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "投稿", class: 'btn btn-primary btn-block', id: 'comment_submit_btn' %>
+    </div>
   </div>
 <% end %>

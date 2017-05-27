@@ -1,25 +1,26 @@
-<ul>
-  <% comments.each do |comment| %>
-    <% unless comment.id.nil? %>
-
-      <li>
-        <div class="comment_user">
-          <div class = "comment_profile_image">
-            <%= profile_img(comment.user) %>
-          </div>
-            <p class="left"><%= comment.user.name %>さんがコメントしました。</p>
-          <div class="pass_time">
-            <p><%= time_ago_in_words(comment.updated_at) %>前</p>
-          </div>
+<% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+    <div class="comment_area">
+      <div class="comment_user_area">
+        <div class = "comment_profile_image">
+          <%= profile_img(comment.user) %>
         </div>
-        <p class="left"><%= comment.content %></p>
-        <% if current_user.id == comment.user_id %>
-          <p class="right">
-            <%= link_to "", edit_topic_comment_path(topic, comment), class: "fa fa-pencil-square-o fa-lg" %>
-            <%= link_to "", topic_comment_path(topic, comment), class: "fa fa-trash-o fa-lg", method: :delete, remote: true, data: {confirm: '本当に削除していいですか？'} %>
-          </p>
-        <% end %>
-      </li>
-    <% end %>
+          <div class="comment_user_name">
+            <p><%= comment.user.name %>さん</p>
+          </div>
+        <div class="pass_time">
+          <p><%= time_ago_in_words(comment.updated_at) %>前</p>
+        </div>
+      </div>
+      <div class="comment_content">
+        <p><%= comment.content %></p>
+      </div>
+      <% if current_user.id == comment.user_id %>
+        <div class="comment_edit_delete_icons">
+          <%= link_to "", edit_topic_comment_path(topic, comment), class: "fa fa-pencil-square-o fa-lg" %>
+          <%= link_to "", topic_comment_path(topic, comment), class: "fa fa-trash-o fa-lg", method: :delete, remote: true, data: {confirm: '本当に削除していいですか？'} %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-</ul>
+<% end %>

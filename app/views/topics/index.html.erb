@@ -17,8 +17,8 @@
             </div>
 
             <div class="topic_action_area">
-              <p><%= topic.user.name %>が投稿しました。</p>
-              <p><%= topic.updated_at %></p>
+              <div class="topic_user_name"><%= topic.user.name %>さんが投稿しました。</div>
+              <div class="topic_post_time"><%= topic.updated_at %></div>
             </div>
 
           </div>
@@ -40,7 +40,7 @@
             </div>
           <% end %>
 
-          <div id="comment_area">
+          <div id="comments_area_<%= topic.id %>">
             <%= render partial: 'comments/index', locals: {comments: topic.comments, topic: topic} %>
           </div>
           <%= render partial: 'comments/form', locals: {comment: topic.comments.build, topic: topic} %>

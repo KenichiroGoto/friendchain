@@ -58,6 +58,12 @@ input, select, textarea {
   margin-bottom: 80px;
 }
 
+.form-control:focus,
+.form-control:hover,
+.form-control:active {
+  border: 1px solid #133783;
+}
+
 .logo_container_logoff img{
   max-width: 250px;
 }
@@ -316,11 +322,22 @@ input, select, textarea {
 
 .topic_action_area {
   margin: 0px;
+  padding: 13px 0px 0px 5px;
+}
+
+.topic_user_name {
+
+}
+
+.topic_post_time {
+  font-size: 12px;
 }
 
 .topic_content_area {
-  display: inline-block;
+  display: block;
   padding-left: 10px;
+  padding-right: 8px;
+  word-wrap: break-word;
 }
 
 .topic_picture_area {
@@ -347,11 +364,75 @@ input, select, textarea {
   border-radius: 0px;
   border: #3b5998;
   background-color: #3b5998;
-  font-size: 10px;
+  font-size: 11px;
   margin: 0px 0px 0px 2px;
 }
 
 #topic_btn:hover {
+  filter:alpha(opacity=80);
+  opacity:0.9;
+}
+
+.comment_user_area {
+  display: flex;
+  margin-bottom: 0px;
+}
+
+.comment_profile_image img{
+  width: 25px;
+}
+
+.comment_user_name {
+
+}
+
+.pass_time {
+  margin-left: auto;
+  font-size: 13px;
+  color: #999;
+  padding-top: 5px;
+}
+
+.comment_content {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: block;
+  word-wrap: break-word;
+}
+
+.comment_edit_delete_icons {
+  width: 50px;
+  margin-left: auto;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+
+.comment_form_box {
+  display: flex;
+}
+
+#comment_form_area {
+  flex: 1;
+  padding-right: 10px;
+}
+
+#comment_form {
+  border-radius: 0px;
+  height: 25px;
+
+}
+
+#comment_submit_btn {
+  width: 50px;
+  height: 25px;
+  border-radius: 0px;
+  border: #3b5998;
+  background-color: #3b5998;
+  font-size: 11px;
+  margin: 0px 0px 3px 2px;
+}
+
+#comment_submit_btn:hover {
   filter:alpha(opacity=80);
   opacity:0.9;
 }
