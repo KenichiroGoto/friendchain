@@ -1,17 +1,24 @@
-<h4>トピックを編集</h4>
+<div class="container">
+  <div class="row">
+    <div class="wrapper col-md-5 col-md-offset-3 col-sm-10">
+      <h4>トピックを編集</h4>
 
-<%= form_for(@topic, url: topic_path) do |f| %>
+      <%= form_for(@topic, url: topic_path) do |f| %>
 
-  <%= f.error_messages! %>
-  <%= f.label :content %>
-  <%= f.text_area :content, :size => "20x8", class: 'form-control' %>
+        <%= f.error_messages! %>
+        <%= f.label :content %>
+        <%= f.text_area :content, :size => "20x3", class: 'form-control' %><br/>
 
-  <%= picture_img(@topic) if @topic.picture?%>
-  <%= f.label :picture %>
-  <%= f.file_field :picture %>
-  <%= f.hidden_field :picture_cache %>
-  <%= f.submit "投稿" %>
+        <%= picture_img(@topic) if @topic.picture?%>
+        <%= f.label :picture %>
+        <%= f.file_field :picture %>
+        <%= f.hidden_field :picture_cache %>
+        <%= f.submit "投稿" %>
 
-<% end %>
+      <% end %>
 
-<%= link_to "トピック一覧へ戻る", topics_path %>
+      <%= link_to "トピック一覧へ戻る", topics_path %>
+
+    </div>
+  </div>
+</div>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :topics do
     post :confirm, on: :collection
+    resources :comments
   end
 
   root 'top#index'

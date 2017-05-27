@@ -31,13 +31,19 @@
             <%= picture_img(topic) if topic.picture?%>
           </div>
 
-          <div class="btn_box">
-            <div class="btn_area">
-              <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-primary btn-block', id: 'topic_btn' %>
-              <%= link_to "削除", topic_path(topic.id), data: { confirm: "本当に削除して良いですか？" }, method: :delete, class: 'btn btn-primary btn-block', id: 'topic_btn' %>
+          <% if current_user.id == topic.user_id %>
+            <div class="btn_box">
+              <div class="btn_area">
+                <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-primary btn-block', id: 'topic_btn' %>
+                <%= link_to "削除", topic_path(topic.id), data: { confirm: "本当に削除して良いですか？" }, method: :delete, class: 'btn btn-primary btn-block', id: 'topic_btn' %>
+              </div>
             </div>
-          </div>
+          <% end %>
 
+          <div id="comment_area">
+            <%= render partial: 'comments/index', locals: {comments: topic.comments, topic: topic} %>
+          </div>
+          <%= render partial: 'comments/form', locals: {comment: topic.comments.build, topic: topic} %>
         </div>
       <% end %>
 
