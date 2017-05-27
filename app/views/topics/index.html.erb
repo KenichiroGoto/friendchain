@@ -5,7 +5,10 @@
       <h1>Topics#index</h1>
       <p><%= notice %></p>
 
-      <%= link_to "トピックを作成する", new_topic_path %>
+
+      <div id="topic_create_area">
+        <%= render partial: 'topics/new', locals: {topic: @topic} %>
+      </div>
 
       <% @topics.each do |topic| %>
         <div class="topic_box">

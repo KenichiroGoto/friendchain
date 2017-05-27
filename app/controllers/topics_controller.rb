@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.all
+    @topic = Topic.new
   end
 
   def new
@@ -19,6 +20,8 @@ class TopicsController < ApplicationController
     if @topic.save
       redirect_to topics_path, notice: "新しいトピックを投稿しました！"
     else
+      # @topics = Topic.all
+      # @topic = Topic.new
       render 'new'
     end
   end

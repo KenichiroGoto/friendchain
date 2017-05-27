@@ -1,0 +1,23 @@
+<%= form_for(@topic) do |f| %>
+
+  <%= f.error_messages! %>
+
+  <div class="topic_create_user_form">
+    <div class="topic_profile_image" >
+      <%= profile_img(current_user) %>
+    </div>
+    <div class="topic_create_form">
+    <!-- <%= f.label :content %> -->
+      <%= f.text_area :content, placeholder: "今なにしてる？", class: 'form-control', id: "topic_form" %>
+    </div>
+  </div>
+  <!-- <%= f.label :picture %> -->
+  <div class="topic_new_picture_img_area">
+    <%= picture_img(@topic) if @topic.picture?%>
+  </div>
+  <%= f.file_field :picture %>
+  <%= f.hidden_field :picture_cache %>
+  <div class="topic_posting_btn_area">
+    <%= f.submit "トピックを作成", class: 'btn btn-primary btn-block', id: 'topic_posting_btn' %>
+  </div>
+<% end %>
