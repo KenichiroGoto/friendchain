@@ -16,9 +16,21 @@ class CommentsController < ApplicationController
   def edit
     @comment = Comment.find(params[:id])
     @topic = @comment.topic
-    respond_to do |format|
-      format.html {redirect_to edit_topic_comment_path}
-      format.js {render :edit, topic: @topic}
+    # respond_to do |format|
+    #   format.html {redirect_to edit_topic_comment_path}
+    #   format.js {render :edit, topic: @topic}
+    # end
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @topic = @comment.topic
+    @comment.update(comment_params)
+    if @comment.save
+      redirect_to topics_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
