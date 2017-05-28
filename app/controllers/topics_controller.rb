@@ -20,9 +20,10 @@ class TopicsController < ApplicationController
     if @topic.save
       redirect_to topics_path, notice: "新しいトピックを投稿しました！"
     else
-      # @topics = Topic.all
-      # @topic = Topic.new
-      render 'new'
+      @topics = Topic.all
+      @topic = Topic.new
+      redirect_to topics_path, alert: "本文を入力して下さい。"
+      # render 'new'
     end
   end
 

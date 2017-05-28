@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
         format.html {redirect_to topics_path, notice: 'コメントを投稿しました。'}
         format.js {render :index}
       else
-        format.html {render :new}
+        format.html {redirect_to topics_path, alert: "コメント文を入力して下さい。"}
       end
     end
   end

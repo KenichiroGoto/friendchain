@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="wrapper col-md-5 col-md-offset-3 col-sm-10">
+
+          <div class="user_show_area">
+            <div class="user_show_profile_image" >
+              <%= profile_img(@user) %>
+            </div>
+            <div class="user_show_name">
+              <%= @user.name %>
+            </div>
+            <div class="user_show_follow_form">
+              <%= render 'follow_form', user: @user %>
+            </div>
+          </div>
+
+
+
+    </div>
+  </div>
+</div>

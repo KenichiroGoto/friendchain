@@ -319,6 +319,13 @@ textarea {
   resize: none;
 }
 
+.topic_uploader_message {
+  font-size: 12px;
+  color: #999;
+  padding-left: 3px;
+  margin-bottom: 3px;
+}
+
 .topic_new_picture_img_area img{
   width: 100%;
 }
@@ -371,12 +378,12 @@ textarea {
 .topic_profile_image img{
   width: 45px;
   display: block;
-  padding: 10px 0px 0px 0px;
+  padding: 5px 5px 0px 0px;
 }
 
 .topic_action_area {
   margin: 0px;
-  padding: 13px 0px 0px 5px;
+  padding: 5px 0px 0px 5px;
 }
 
 .topic_user_name {
@@ -385,6 +392,7 @@ textarea {
 
 .topic_post_time {
   font-size: 12px;
+  color: #999;
 }
 
 .topic_content_area {
@@ -400,6 +408,7 @@ textarea {
 
 .topic_picture_area img{
   width: 100%;
+  padding: 10px 0px 10px 0px;
 }
 
 .btn_box {
@@ -427,9 +436,18 @@ textarea {
   opacity:0.9;
 }
 
+.comment_area {
+  padding-top: 5px;
+  border-top: solid 1px #ecf0fe;
+}
+
 .comment_user_area {
   display: flex;
   margin-bottom: 0px;
+}
+
+.comment_profile_image {
+  padding: 3px 0px 0px 0px;
 }
 
 .comment_profile_image img{
@@ -437,7 +455,7 @@ textarea {
 }
 
 .comment_user_name {
-
+  padding: 5px 0px 0px 10px;
 }
 
 .pass_time {
@@ -463,6 +481,7 @@ textarea {
 
 .comment_form_box {
   display: flex;
+  padding-top: 10px;
 }
 
 #comment_form_area {
@@ -488,4 +507,80 @@ textarea {
 #comment_submit_btn:hover {
   filter:alpha(opacity=80);
   opacity:0.9;
+}
+
+.user_index_area {
+  display: flex;
+  padding: 8px 0px 8px 0px;
+  border-bottom: solid 1px #D3D8E8;
+}
+
+.user_index_profile_image {
+}
+
+.user_index_profile_image img{
+  width: 40px;
+  border-radius: 50%;
+}
+
+.user_index_name {
+  padding: 10px 0px 0px 10px;
+
+}
+
+.user_index_follow_form {
+  margin-left: auto;
+}
+
+#user_follow_btn {
+  width: 100px;
+  height: 28px;
+  border-radius: 0px;
+  border: #3b5998;
+  background-color: #3b5998;
+  font-size: 11px;
+  margin: 8px 0px 0px 10px;
+}
+
+#user_follow_btn:hover {
+  filter:alpha(opacity=80);
+  opacity:0.8;
+}
+
+#user_unfollow_btn {
+  width: 100px;
+  height: 28px;
+  border-radius: 0px;
+  border: #D3D3D3;
+  background-color: #D3D3D3;
+  font-size: 11px;
+  margin: 8px 0px 0px 10px;
+  color: black;
+}
+
+#user_unfollow_btn:hover {
+  filter:alpha(opacity=80);
+  opacity:0.8;
+}
+
+.user_show_area {
+  display: flex;
+}
+
+.user_show_profile_image {
+
+}
+
+.user_show_profile_image img{
+  width: 80px;
+}
+
+.user_show_name {
+  font-size: 30px;
+  padding: 20px 0px 0px 10px;
+}
+
+.user_show_follow_form {
+  margin-left: auto;
+  padding: 20px 0px 0px 10px;
 }

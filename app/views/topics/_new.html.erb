@@ -7,11 +7,12 @@
       <%= profile_img(current_user) %>
     </div>
     <div class="topic_create_form">
-    <!-- <%= f.label :content %> -->
       <%= f.text_area :content, placeholder: "今なにしてる？", class: 'form-control', id: "topic_form" %>
     </div>
   </div>
-  <!-- <%= f.label :picture %> -->
+  <div class="topic_uploader_message">
+    写真
+  </div>
   <div class="topic_new_picture_img_area">
     <%= picture_img(@topic) if @topic.picture?%>
   </div>

@@ -2,9 +2,17 @@
   <div class="row">
     <div class="wrapper col-md-5 col-md-offset-3 col-sm-10">
 
-      <h1>Topics#index</h1>
-      <p><%= notice %></p>
-
+      <% if alert != nil %>
+      <div class="alert alert-danger" role="alert">
+        <button type="button" data-dismiss="alert" class="close">&times;</button>
+        <p><%= alert %></p>
+      </div>
+      <% elsif notice != nil %>
+        <div class="alert alert-success" role="alert">
+          <button type="button" data-dismiss="alert" class="close">&times;</button>
+          <p><%= notice %></p>
+        </div>
+      <% end %>
 
       <div id="topic_create_area">
         <%= render partial: 'topics/new', locals: {topic: @topic} %>

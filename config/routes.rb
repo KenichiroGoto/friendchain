@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'relationships/create'
-
-  get 'relationships/destroy'
-
   resources :topics do
     post :confirm, on: :collection
     resources :comments
   end
 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
 
   resources :relationships, only: [:create, :destroy]
 

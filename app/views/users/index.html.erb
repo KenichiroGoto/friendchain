@@ -3,11 +3,19 @@
     <div class="wrapper col-md-5 col-md-offset-3 col-sm-10">
       <h4>ユーザー一覧</h4>
       <% @users.each do |user| %>
-        <div class="topic_profile_image" >
-          <%= profile_img(user) %>
-        </div>
-        <%= user.name %>
-        <%= render 'follow_form', user: user %>
+        <% unless user == current_user %>
+          <div class="user_index_area">
+            <div class="user_index_profile_image" >
+              <%= profile_img(user) %>
+            </div>
+            <div class="user_index_name">
+              <%= link_to "#{user.name}", user_path(user)  %>
+            </div>
+            <div class="user_index_follow_form">
+              <%= render 'follow_form', user: user %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
