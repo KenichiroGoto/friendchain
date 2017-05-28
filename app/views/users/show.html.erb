@@ -14,7 +14,13 @@
             </div>
           </div>
 
+          <div class="user_show_followed_users_area">
+            <%= render partial: 'followed_users', locals: {user: @user, followed_users: @followed_users} %>
+          </div>
 
+          <div class="user_show_followers_area">
+            <%= render partial: 'followers', locals: {user: @user, followers: @followers} %>
+          </div>
 
     </div>
   </div>

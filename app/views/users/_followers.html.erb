@@ -1,0 +1,16 @@
+<h4>フォロワー数 ： <%= @followers.count %>人</h4>
+<% @followers.each do |user| %>
+  <% unless current_user.id == user.id  then %>
+    <div class="user_index_area">
+      <div class="user_index_profile_image" >
+        <%= profile_img(user) %>
+      </div>
+      <div class="user_index_name">
+        <%= link_to "#{user.name}", user_path(user)  %>
+      </div>
+      <div class="user_index_follow_form">
+        <%= render 'follow_form', user: user %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
