@@ -433,7 +433,7 @@ textarea {
 
 #topic_btn:hover {
   filter:alpha(opacity=80);
-  opacity:0.9;
+  opacity:0.6;
 }
 
 .comment_area {
@@ -506,7 +506,7 @@ textarea {
 
 #comment_submit_btn:hover {
   filter:alpha(opacity=80);
-  opacity:0.9;
+  opacity:0.6;
 }
 
 .user_index_area {
@@ -528,11 +528,15 @@ textarea {
 
 }
 
-.user_index_follow_form {
+.user_index_btn_box {
+  display: flex;
   margin-left: auto;
 }
 
-#user_follow_btn {
+.user_index_message_button {
+}
+
+#user_index_message_btn {
   width: 100px;
   height: 28px;
   border-radius: 0px;
@@ -542,9 +546,27 @@ textarea {
   margin: 8px 0px 0px 10px;
 }
 
+#user_index_message_btn:hover {
+  filter:alpha(opacity=80);
+  opacity:0.6;
+}
+
+.user_index_follow_form {
+}
+
+#user_follow_btn {
+  width: 100px;
+  height: 28px;
+  border-radius: 0px;
+  border: #3b5998;
+  background-color: #3b5998;
+  font-size: 11px;
+  margin: 8px 0px 0px 5px;
+}
+
 #user_follow_btn:hover {
   filter:alpha(opacity=80);
-  opacity:0.8;
+  opacity:0.6;
 }
 
 #user_unfollow_btn {
@@ -554,13 +576,13 @@ textarea {
   border: #D3D3D3;
   background-color: #D3D3D3;
   font-size: 11px;
-  margin: 8px 0px 0px 10px;
+  margin: 8px 0px 0px 5px;
   color: black;
 }
 
 #user_unfollow_btn:hover {
   filter:alpha(opacity=80);
-  opacity:0.8;
+  opacity:0.6;
 }
 
 .user_show_area {
