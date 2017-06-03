@@ -75,6 +75,7 @@ input, select, textarea {
 .logo_container_login img{
   max-width: 25px;
   border-radius: 2px;
+  padding-bottom: 15px;
 }
 
 .logo_container_login {
@@ -560,6 +561,7 @@ textarea {
 }
 
 .user_index_follow_form {
+  margin-left: auto;
 }
 
 #user_follow_btn {
@@ -613,4 +615,48 @@ textarea {
 .user_show_follow_form {
   margin-left: auto;
   padding: 20px 0px 0px 10px;
+}
+
+.message_companion_area {
+  display: flex;
+  border-bottom: solid 3px #3b5998;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.message_companion_profile_image img{
+  width: 80px;
+  border-radius: 50%;
+}
+
+.message_companion_name {
+  padding: 30px 0px 0px 10px;
+  font-size: 18px;
+}
+
+.message_item {
+  border-bottom: solid 1px #D3D3D3;
+  margin: 5px 0px 10px 0px;
+  padding-bottom: 5px;
+}
+
+.message_header {
+  display: flex;
+  padding: 5px 0px 5px 0px;
+}
+
+.message_user_name_time {
+  padding: 10px 0px 0px 10px;
+}
+
+.message_set {
+  display: flex;
+}
+
+.message_delete_icons {
+  margin-left: auto;
+}
+
+#id_message_delete_icons {
+  margin-left: auto;
 }

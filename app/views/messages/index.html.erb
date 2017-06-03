@@ -2,28 +2,46 @@
   <div class="row">
     <div class=" wrapper col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
 
+      <%= flash[:error] %>
+
+      <div class="message_companion_area">
+        <div class="message_companion_profile_image">
+          <%= profile_img(@companion) %>
+        </div>
+        <div class="message_companion_name">
+          <strong><%= @companion.name %>さんとのメッセージ</strong>
+        </div>
+      </div>
+
       <% if @over_ten %>
-        <%= link_to "過去のメッセージ", '?m = all' %>
+        <%= link_to "過去のメッセージ", '?m=all' %>
       <% end %>
 
       <div class="ui segment">
         <% @messages.each do |message| %>
           <% if message.body %>
             <% user = User.find(message.user_id) %>
-            <div class="item">
+            <div class="message_item">
               <div class="content">
-                <div class="header">
-                  <div class="index_profile_image">
+                <div class="message_header">
+                  <div class="user_index_profile_image">
                     <%= profile_img(user) %>
                   </div>
-                  <strong><%= user.name %></strong>
-                  <%= message.message_time %>
+                  <div class="message_user_name_time">
+                    <strong><%= user.name %></strong>
+                    <%= message.message_time %>
+                  </div>
                 </div>
-                <div class="list">
+                <div class="message_set">
                   <div class="item">
                     <i class="right triangle icon"></i>
                     <%= message.body %>
                   </div>
+                  <% if current_user.id == message.user_id %>
+                    <div class="message_delete_icons">
+                      <%= link_to "", conversation_message_path(message.conversation, message), class: "fa fa-trash-o fa-lg", id: "id_message_delete_icons", method: :delete, data: {confirm: '本当に削除していいですか？'} %>
+                    </div>
+                  <% end %>
                 </div>
               </div>
             </div>

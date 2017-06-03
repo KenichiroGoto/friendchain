@@ -4,6 +4,13 @@ class MessagesController < ApplicationController
   end
 
   def index
+
+    if @conversation.sender_id == current_user.id
+      @companion = User.find(@conversation.recipient_id)
+    elsif @conversation.recipient_id == current_user.id
+      @companion = User.find(@conversation.sender_id)
+    end
+
     @messages = @conversation.messages
     if @messages.length > 10
       @over_ten = true
@@ -28,7 +35,15 @@ class MessagesController < ApplicationController
     @message = @conversation.messages.build(message_params)
     if @message.save
       redirect_to conversation_messages_path(@conversation)
+    else
+      redirect_to conversation_messages_path(@conversation), flash: {error: "メッセージを入力して下さい。"}
     end
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    redirect_to conversation_messages_path(@conversation), notice: "メッセージを削除しました。"
   end
 
   private
