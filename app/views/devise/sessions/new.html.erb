@@ -7,7 +7,17 @@
 
       <h3>ログイン</h3>
 
-      <%= alert %>
+      <% if alert != nil %>
+      <div class="alert alert-danger" role="alert">
+        <button type="button" data-dismiss="alert" class="close">&times;</button>
+        <p><%= alert %></p>
+      </div>
+      <% elsif notice != nil %>
+        <div class="alert alert-success" role="alert">
+          <button type="button" data-dismiss="alert" class="close">&times;</button>
+          <p><%= notice %></p>
+        </div>
+      <% end %>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>

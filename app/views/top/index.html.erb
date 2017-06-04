@@ -1,7 +1,19 @@
 
 <div class="container">
   <div class="row" id="top_main">
-          <%= notice %>
+
+    <% if alert != nil %>
+    <div class="alert alert-danger" role="alert">
+      <button type="button" data-dismiss="alert" class="close">&times;</button>
+      <p><%= alert %></p>
+    </div>
+    <% elsif notice != nil %>
+      <div class="alert alert-success" role="alert">
+        <button type="button" data-dismiss="alert" class="close">&times;</button>
+        <p><%= notice %></p>
+      </div>
+    <% end %>
+    
     <div class="wrapper col-lg-5 col-lg-offset-1 col-md-6  col-sm-6">
       <div class="top_left_area">
         <div class="top_left_area_message">

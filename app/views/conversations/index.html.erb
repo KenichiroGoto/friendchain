@@ -1,24 +1,32 @@
-<div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-  <table class="table table-hover">
-    <thead>
-      <h2>メッセージ一覧</h2>
-    </thead>
-    <tbody>
-      <% @conversations.each do |conversation| %>
-        <% if conversation.target_user(current_user).present? %>
-          <div class="container-child col-md-3 col-sm-4 col-xs-6">
-            <div class="follow_box">
-              <div class="follow_inbox">
-                <div class="index_profile_image">
+<div class="container">
+  <div class="row">
+    <div class=" wrapper col-md-5 col-md-offset-3 col-sm-10 col-sm-offset-1">
+      <table class="table table-hover">
+        <thead>
+          <h4>メッセージ相手一覧</h4>
+        </thead>
+        <tbody>
+          <% @conversations.each do |conversation| %>
+            <% if conversation.target_user(current_user).present? %>
+              <div class="conversation_index_area">
+                <div class="user_index_profile_image">
                   <%= profile_img(conversation.target_user(current_user)) %>
                 </div>
-                <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation) %>
-                <p><%= conversation.messages.last.body %></p>
+                <div class="conversation_companion">
+                  <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation) %>
+                </div>
+                <div class="conversation_unread_notice">
+                  <% if conversation.messages.last != nil %>
+                    <% if current_user.id != conversation.messages.last.user_id && conversation.messages.last.read == false %>
+                      <%= image_tag('friendchain_new_message_icon_for_index.png') %>
+                    <% end %>
+                  <% end %>
+                </div>
               </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

@@ -33,6 +33,22 @@ def profile_img(user)
   image_tag(img_url, alt: user.name)
 end
 
+def new_message_arrival_count(user)
+  count = 0
+  conversations = Conversation.all
+  conversations.each do |conversation|
+    if conversation.target_user(user).present?
+      if conversation.messages.last != nil
+        if current_user.id != conversation.messages.last.user_id && conversation.messages.last.read == false
+          count += 1
+        end
+      end
+    end
+  end
+  @count = count
+  return count
+end
+
 module ActionView
   module Helpers
     module FormHelper

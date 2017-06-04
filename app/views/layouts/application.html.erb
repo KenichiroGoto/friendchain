@@ -50,11 +50,23 @@
               <%= link_to current_user.name, edit_user_registration_path, class: 'btn btn-primary btn-block', id: 'user_edit_btn' %>
             </div>
             <div class="header_topic_index">
-              <%= link_to "トピック", topics_path, class: 'btn btn-primary btn-block', id: 'topic_index_btn' %>
+              <%= link_to image_tag('friendchain_earth_icon.png'), topics_path %>
             </div>
             <div class="header_all_user">
-              <%= link_to "ユーザー一覧", users_path, class: 'btn btn-primary btn-block', id: 'all_user_btn' %>
+              <%= link_to image_tag('friendchain_all_users_icon.png'), users_path %>
             </div>
+            <% if new_message_arrival_count(current_user) == 0 %>
+              <div class="header_message">
+                <%= link_to image_tag('friendchain_message_none_icon.png'), conversations_path %>
+              </div>
+            <% else %>
+              <div class="header_message">
+                <%= link_to image_tag('friendchain_message_newarrival_icon.png'), conversations_path %>
+              </div>
+              <div class="header_message_new_arrival_count">
+                <p><%= @count %></p>
+              </div>
+            <% end %>
             <div class="header_logoff">
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
             </div>

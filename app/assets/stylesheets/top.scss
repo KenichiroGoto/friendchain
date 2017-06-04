@@ -172,16 +172,12 @@ input, select, textarea {
 }
 
 .header_topic_index {
+  margin-top: 15px;
   padding-right: 5px;
 }
 
-.header_topic_index a{
-  display: block;
-  padding: 5px 3px 0px 3px;
-  min-width: 60px;
-  text-align: center;
-  color: white;
-  text-decoration: none;
+.header_topic_index img{
+  width: 22px;
 }
 
 #topic_index_btn {
@@ -199,16 +195,26 @@ input, select, textarea {
 }
 
 .header_all_user {
+  margin-top: 10px;
   padding-right: 5px;
 }
 
-.header_all_user a{
-  display: block;
-  padding: 5px 3px 0px 3px;
-  min-width: 60px;
-  text-align: center;
-  color: white;
-  text-decoration: none;
+.header_all_user img{
+  width: 30px;
+}
+
+.header_message {
+  margin-top: 15px;
+  padding-right: 5px;
+}
+
+.header_message img{
+  width: 32px;
+}
+
+.header_message_new_arrival_count {
+  padding: 25px 5px 0px 0px;
+  font-size: 10px;
 }
 
 .header_logoff {
@@ -615,6 +621,24 @@ textarea {
 .user_show_follow_form {
   margin-left: auto;
   padding: 20px 0px 0px 10px;
+}
+
+.conversation_index_area {
+  display: flex;
+  padding: 10px 0px 10px 50px;
+  border-bottom: solid 1px #D3D3D3;
+}
+
+.conversation_companion {
+  padding: 10px 0px 0px 15px;
+}
+
+.conversation_unread_notice {
+  padding: 0px 20px 0px 10px;
+}
+
+.conversation_unread_notice img{
+  width: 30px;
 }
 
 .message_companion_area {
