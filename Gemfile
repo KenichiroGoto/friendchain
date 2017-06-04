@@ -89,3 +89,5 @@ gem 'pusher'
 gem 'fog'
 
 gem 'dotenv-rails'
+
+gem 'unicorn'
