@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_topic, only: [:edit, :update, :show, :destroy]
+  before_action :set_topic, only: [:edit, :update, :destroy]
 
   def index
     @topics = Topic.all
@@ -40,6 +40,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @topic = Topic.find(params[:id])
   end
 
   def destroy
@@ -61,5 +62,11 @@ class TopicsController < ApplicationController
 
     def set_topic
       @topic = Topic.find(params[:id])
+      # 成りすましチェック
+      if @topic.user_id != current_user.id
+        redirect_to root_path, alert: "通報しました。"
+        return
+      end
     end
+
 end

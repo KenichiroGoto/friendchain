@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
-
   before_action do
     @conversation = Conversation.find(params[:conversation_id])
   end
@@ -35,6 +34,10 @@ class MessagesController < ApplicationController
 
   def create
     @message = @conversation.messages.build(message_params)
+    if @message.user_id != current_user.id
+      redirect_to root_path, alert: "通報しました。"
+      return
+    end
     if @message.save
       redirect_to conversation_messages_path(@conversation)
     else
@@ -44,6 +47,10 @@ class MessagesController < ApplicationController
 
   def destroy
     @message = Message.find(params[:id])
+    if @message.user_id != current_user.id
+      redirect_to root_path, alert: "通報しました。"
+      return
+    end
     @message.destroy
     redirect_to conversation_messages_path(@conversation), notice: "メッセージを削除しました。"
   end
@@ -52,4 +59,5 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(:body, :user_id)
     end
+
 end
